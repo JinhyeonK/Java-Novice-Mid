@@ -7,7 +7,9 @@ public class Main {
         if (n%2==0){
             if(((n/10)+(n%10))%5==0){
             System.out.print("Yes");
-        } 
+        }else{
+            System.out.print("No");
+        }
         }else{
             System.out.print("No");
         }
