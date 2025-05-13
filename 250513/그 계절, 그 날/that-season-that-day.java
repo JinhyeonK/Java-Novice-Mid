@@ -6,7 +6,7 @@ public class Main {
         int m = sc.nextInt();
         int d = sc.nextInt();
         // Please write your code here.
-        if (bo(m,d)){
+        if (bo(y,m,d)){
             System.out.print(se(m));
         } else{
             if (nn(y)){
@@ -31,11 +31,13 @@ public class Main {
         }
         
     }
-    public static boolean bo(int m, int d){
+    public static boolean bo(int y, int m, int d) {
         int[] daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        if (m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth[m]){
-            return true;
-        } else{ return false;}
+        if (m == 2 && nn(y)) {
+            daysInMonth[2] = 29;  // 윤년이면 2월 = 29일
+        }
+
+        return m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth[m];
     }
 }
