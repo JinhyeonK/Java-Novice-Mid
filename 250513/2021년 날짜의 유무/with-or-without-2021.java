@@ -24,7 +24,11 @@ public class Main {
                 System.out.print("No");
             }
         }else if(m>7&&m%2==0)
+            {if (d<=31)
             {System.out.print("Yes");
+            } else{
+                System.out.print("No");
+            }
 
         }
     }
