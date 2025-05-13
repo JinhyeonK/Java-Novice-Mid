@@ -5,32 +5,30 @@ public class Main {
         int y = sc.nextInt();
         int m = sc.nextInt();
         int d = sc.nextInt();
-        // Please write your code here.
-        if (bo(y,m,d)){
+
+        if (bo(y, m, d)) {  // 윤년 정보를 함께 전달
             System.out.print(se(m));
-        } else{
-            if (nn(y)){
-                System.out.print(se(m));
-            } else{
-                System.out.print("-1");
-            }
+        } else {
+            System.out.print("-1");
         }
     }
-   public static boolean nn(int y) {
+
+    public static boolean nn(int y) {
         return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
-   }
-    public static String se(int m){
-        if (m>=3 && m<=5){
+    }
+
+    public static String se(int m) {
+        if (m >= 3 && m <= 5) {
             return "Spring";
-        } else if(m>=6 && m<=8){
+        } else if (m >= 6 && m <= 8) {
             return "Summer";
-        } else if(m>=9 && m<=11){
+        } else if (m >= 9 && m <= 11) {
             return "Fall";
-        } else{
+        } else {
             return "Winter";
         }
-        
     }
+
     public static boolean bo(int y, int m, int d) {
         int[] daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
