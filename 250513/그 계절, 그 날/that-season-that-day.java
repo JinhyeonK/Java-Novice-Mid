@@ -6,7 +6,7 @@ public class Main {
         int m = sc.nextInt();
         int d = sc.nextInt();
         // Please write your code here.
-        if (bo(m,n)){
+        if (bo(m,d)){
             System.out.print(se(m));
         } else{
             if (nn(y)){
@@ -18,6 +18,7 @@ public class Main {
     }
    public static boolean nn(int y) {
         return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+   }
     public static String se(int m){
         if (m>=3 && m<=5){
             return "Spring";
@@ -37,5 +38,4 @@ public class Main {
             return true;
         } else{ return false;}
     }
-}
 }
