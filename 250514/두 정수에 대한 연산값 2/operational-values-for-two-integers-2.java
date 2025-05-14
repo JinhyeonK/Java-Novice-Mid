@@ -19,10 +19,8 @@ public class Main {
             n*=2;
             
         }
-        if (n > 100 || m > 100) {
-            return new int[]{n, m};
-        }
+       
 
-        return ab(n, m);
+        return new int[]{n, m};
     }
     }
