@@ -1,17 +1,22 @@
 import java.util.*;
 import java.io.*;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // Please write your code here.
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
-        int n=Integer.parseInt(br.readLine());
-        int []arr=new int [n];
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        Integer [] arr= new Integer[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
         Arrays.sort(arr);
-        for(int i=0;i<n+1;i++){
+        for(int i=0;i<n;i++){
             System.out.print(arr[i]+" ");
         }
-        Array.sort(arr, Collection.reverseOrder());
-        for(int i=0;i<n+1;i++){
+        System.out.println();
+        Arrays.sort(arr, Collections.reverseOrder());
+        for(int i=0;i<n;i++){
             System.out.print(arr[i]+" ");
         }
     }
