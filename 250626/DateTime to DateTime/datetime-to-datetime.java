@@ -12,6 +12,9 @@ public class Main {
         d=11;
         e=11;
         f=11;
+        if (a < d || (a == d && b < e) || (a == d && b == e && c < f)) {
+            cnt = -1;
+        } else {
         while(true){
             if( d==a&&e==b&f==c){
                 break;
@@ -28,11 +31,8 @@ public class Main {
                 e=0;
 
             }
-            if (a<=11||b<=11&&c<11){
-                cnt = -1;
-                break;
-            }
-    }
+
     System.out.print(cnt);
+    }
 }
 }
