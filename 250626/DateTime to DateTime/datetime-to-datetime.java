@@ -28,7 +28,7 @@ public class Main {
                 e=0;
 
             }
-            if (a<=11&&b<=11&&c<11){
+            if (a<=11||b<=11||c<11){
                 cnt = -1;
                 break;
             }
