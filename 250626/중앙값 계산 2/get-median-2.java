@@ -1,23 +1,32 @@
-import java.io.*;
-import java.util.*;
+public class MedianFinder {
+    public static double medianByMerge(int[] a, int[] b) {
+        int n = a.length, m = b.length;
+        int total = n + m;
+        int midIndex = total / 2;
 
-public class Main {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int[] result = new int[n];
-        for(int i = 0; i < n; i++){
-            result[i] = Integer.parseInt(st.nextToken());
+        int i = 0, j = 0;
+        int m1 = 0, m2 = 0;
+
+        for (int cnt = 0; cnt <= midIndex; cnt++) {
+            m2 = m1;
+            if (i < n && (j >= m || a[i] <= b[j])) {
+                m1 = a[i++];
+            } else {
+                m1 = b[j++];
+            }
         }
 
-        int[] backup = Arrays.copyOf(result, result.length);
-
-        for(int i = 1; i <= n; i += 2){
-            Arrays.sort(result);
-            System.out.print(result[i / 2] + " ");
-            result = Arrays.copyOf(backup, backup.length); // 복원
+        if (total % 2 == 0) {
+            return (m1 + m2) / 2.0;
+        } else {
+            return m1;
         }
     }
+
+    public static void main(String[] args) {
+        int[] a = {-5, 3, 6, 12, 15};
+        int[] b = {-12, -10, -6, -3, 4, 10};
+        System.out.println(medianByMerge(a, b));  // 3.0
+    }
 }
+
