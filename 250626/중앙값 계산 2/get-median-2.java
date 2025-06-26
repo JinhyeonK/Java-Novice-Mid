@@ -14,7 +14,7 @@ public class Main {
 
         int[] backup = Arrays.copyOf(result, result.length);
         for(int i = 1; i <= n; i += 2){
-            Arrays.sort(result, 1, i);
+            Arrays.sort(result, 0, i);
             System.out.print(result[i / 2] + " ");
             result = Arrays.copyOf(backup, backup.length);
         }
